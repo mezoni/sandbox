@@ -16,6 +16,7 @@ void main() {
   var executable = "example/hello.dart";
   var arguments = <String>[];
   print("Run script '$name/$executable' in sandbox");
+  print("================");
   ProcessResult result;
   try {
     var dart = lib_path.join(sandbox.sdkPath, "bin", "dart");
@@ -30,6 +31,7 @@ void main() {
     displayOutput(result);
   } finally {
     sandbox.destroy();
+    print("================");
     print("Script '$executable' terminated");
   }
 }

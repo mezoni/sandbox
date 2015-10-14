@@ -27,6 +27,7 @@ void main() {
   var executable = "example/hello.dart";
   var arguments = <String>[];
   print("Run script '$name/$executable' in sandbox");
+  print("================");
   ProcessResult result;
   try {
     var dart = lib_path.join(sandbox.sdkPath, "bin", "dart");
@@ -41,6 +42,7 @@ void main() {
     displayOutput(result);
   } finally {
     sandbox.destroy();
+    print("================");
     print("Script '$executable' terminated");
   }
 }
@@ -58,16 +60,18 @@ void displayOutput(ProcessResult result) {
     print(result.stderr);
   }
 }
-
 ```
 
 Output
 
 ```
 Create sandbox for 'sandbox-0.0.1'
-Sandbox created at C:\Users\user\AppData\Local\Temp\b7eeb77a-729b-11e5-adeb-50e54991a89c
+Sandbox created at C:\Users\user\AppData\Local\Temp\cd4d3cec-729c-11e5-adeb-50e54991a89c
 Run script 'sandbox-0.0.1/example/hello.dart' in sandbox
+================
 Hello from C:\Users\user\AppData\Roaming\Pub\Cache\hosted\pub.dartlang.org\sandbox-0.0.1
 
+
+================
 Script 'example/hello.dart' terminated
 ```
