@@ -37,7 +37,7 @@ class _Environment {
     var path = lib_path.join(applicationPath, "pubspec.yaml");
     var file = new File(path);
     if (!file.existsSync()) {
-      throw new FileSystemException("File not found: $path");
+      throw new FileSystemException("File not found", path);
     }
 
     var contents = file.readAsStringSync();
@@ -91,8 +91,7 @@ class _Environment {
     }
 
     if (dartSdk == null) {
-      throw new FileSystemException("Dart SDK not found");
-      _exitCode = -1;
+      throw new StateError("Dart SDK not found");
       return;
     }
   }
@@ -102,7 +101,7 @@ class _Environment {
     if (result.exitCode != 0) {
       stdout.writeAll(result.stdout);
       stderr.writeAll(result.stderr);
-      throw new FileSystemException("Unable to get dependencies");
+      throw new StateError("Unable to get dependencies");
     }
   }
 

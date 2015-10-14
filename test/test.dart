@@ -1,8 +1,8 @@
-import 'package:path/path.dart' as lib_path;
 import 'package:sandbox/sandbox.dart';
 
 void main() {
-  var appPath = "/home/andrew/.pub-cache/hosted/pub.dartlang.org/unsafe_extension-0.0.22";
+  //var appPath = "/home/andrew/.pub-cache/hosted/pub.dartlang.org/unsafe_extension-0.0.22";
+  var appPath = "c:/users/user/appdata/roaming/pub/cache/hosted/pub.dartlang.org/unsafe_extension-0.0.22";
   var sandbox = new Sandbox(appPath);
   var result = sandbox.runSync("bin/setup.dart", [], workingDirectory: appPath);
   if (result.stdout is List) {
