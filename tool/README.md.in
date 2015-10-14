@@ -1,0 +1,19 @@
+# libpq93_bindings
+
+{{DESCRIPTION}}
+
+Version: {{VERSION}}
+
+The goal of the Dash effort is ultimately to replace JavaScript as the lingua franca of web development on the open web platform.
+
+## Notice:
+
+This is not a driver but this software is intended for implementing them.
+
+## Notice for Windows users:
+
+The dynamic library `libpq.dll` should be available through the PATH environment variable.
+
+## Notice for Mac OS users:
+
+This software is not tested on Mac OS.
