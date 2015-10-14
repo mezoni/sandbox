@@ -1,14 +1,3 @@
-# sandbox
-
-Sandbox creates an environment that allows to execute the Dart script anywhere (even in the pub cache).
-
-Version: 0.0.2
-
-The goal of the Dash effort is ultimately to replace JavaScript as the lingua franca of web development on the open web platform.
-
-### Example:
-
-```dart
 import 'dart:io';
 
 import 'package:path/path.dart' as lib_path;
@@ -58,16 +47,3 @@ void displayOutput(ProcessResult result) {
     print(result.stderr);
   }
 }
-
-```
-
-Output
-
-```
-Create sandbox for 'sandbox-0.0.1'
-Sandbox created at C:\Users\user\AppData\Local\Temp\b7eeb77a-729b-11e5-adeb-50e54991a89c
-Run script 'sandbox-0.0.1/example/hello.dart' in sandbox
-Hello from C:\Users\user\AppData\Roaming\Pub\Cache\hosted\pub.dartlang.org\sandbox-0.0.1
-
-Script 'example/hello.dart' terminated
-```
