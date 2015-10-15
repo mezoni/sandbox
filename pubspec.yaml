@@ -1,10 +1,12 @@
 name: sandbox
-version: 0.0.2
+version: 0.0.3
 author: Andrew Mezoni <andrew.mezoni@gmail.com>
 description: Sandbox creates an environment that allows to execute the Dart script anywhere (even in the pub cache).
 homepage: https://github.com/mezoni/sandbox
 dependencies:
   path: any
 dev_dependencies:
+  build_tools: any
+  file_utils: any
   pub_cache: any
   test: any

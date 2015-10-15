@@ -63,6 +63,22 @@ class Sandbox {
     directory.deleteSync(recursive: true);
   }
 
+  void _displayOutput(ProcessResult result) {
+    // TODO: Use stderr and stdout
+    if (result.stdout is List) {
+      print(new String.fromCharCodes(result.stdout));
+    } else if (result.stdout is String) {
+      print(result.stdout);
+    }
+
+    if (result.stderr is List) {
+      print(new String.fromCharCodes(result.stderr));
+    } else if (result.stderr is String) {
+      print(result.stderr);
+    }
+  }
+
+
   void _findDartSdk() {
     var executable = Platform.executable;
     var s = Platform.pathSeparator;
@@ -99,8 +115,7 @@ class Sandbox {
   void _getDependencies() {
     var result = _pubGet();
     if (result.exitCode != 0) {
-      stdout.writeAll(result.stdout);
-      stderr.writeAll(result.stderr);
+      _displayOutput(result);
       throw new StateError("Unable to get dependencies");
     }
   }
